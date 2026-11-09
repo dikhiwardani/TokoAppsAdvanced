@@ -2,26 +2,6 @@
 
 Aplikasi desktop berbasis **JavaFX** untuk mengelola stok produk toko: menambah produk beserta foto, melihat detailnya, serta mencari, memfilter, dan menghapus data pada tabel daftar produk.
 
-![Java](https://img.shields.io/badge/Java-17%2B-orange?logo=openjdk&logoColor=white)
-![JavaFX](https://img.shields.io/badge/JavaFX-21-blue)
-![Maven](https://img.shields.io/badge/Build-Maven-C71A36?logo=apachemaven&logoColor=white)
-
----
-
-## 📑 Daftar Isi
-
-- [Fitur](#-fitur)
-- [Tampilan Aplikasi](#-tampilan-aplikasi)
-- [Teknologi](#-teknologi)
-- [Struktur Project](#-struktur-project)
-- [Prasyarat](#-prasyarat)
-- [Cara Menjalankan](#-cara-menjalankan)
-- [Panduan Penggunaan](#-panduan-penggunaan)
-- [Catatan Penting](#-catatan-penting)
-- [Pengembang](#-pengembang)
-
----
-
 ## ✨ Fitur
 
 - **Tambah produk baru** dengan nama, jenis (Makanan / Minuman), harga, dan foto.
@@ -39,28 +19,48 @@ Aplikasi desktop berbasis **JavaFX** untuk mengelola stok produk toko: menambah 
 
 Halaman utama untuk memasukkan produk baru.
 
-![Form Tambah Produk](docs/screenshots/form.png)
+![Form Tambah Produk](/screenshots/Form.png)  
 
-### 2. Daftar Produk
-
-Tabel produk dengan fitur cari, filter, tambah, lihat detail, dan hapus.
-
-![Daftar Produk](docs/screenshots/daftar.png)
-
-### 3. Detail Produk
+- **Exception Handling**
+  
+  ![Exception Handling Angka](/screenshots/Handling-Angka.png)
+  ![Exception Handling Nama](/screenshots/Handling-Nama.png)
+  
+  
+### 2. Detail Produk
 
 Rincian produk yang baru disimpan atau yang dipilih dari daftar.
 
-![Detail Produk](docs/screenshots/detail.png)
+![Detail Produk](/screenshots/Detail.png)  
+
+- **Melihat Kembali Detail Melalui Daftar**
+  
+  ![Details](/screenshots/Detail-Daftar.png)
+  ![Details](/screenshots/Hasil-Detail.png)
+
+### 3. Daftar Produk
+
+Tabel produk dengan fitur cari, filter, tambah, lihat detail, dan hapus.
+
+![Daftar Produk](/screenshots/Daftar.png)  
+
+- **Fitur Searching Produk**
+  
+  ![Search](/screenshots/Search.png)
+
+- **Fitur Filter Produk**
+  
+  ![Filter](/screenshots/Filter.png)
+
 
 ## 🧰 Teknologi
 
 | Komponen | Versi |
 | --- | --- |
-| Java (JDK) | 17 atau lebih baru |
+| Java (JDK) | 26   |
 | JavaFX (`controls`, `fxml`) | 21 |
-| Apache Maven | 3.8+ |
-| javafx-maven-plugin | 0.0.8 |
+| Apache Maven 
+| javafx-maven-plugin 
 
 ## 📂 Struktur Project
 
@@ -72,14 +72,14 @@ TokoAppAdvance/
 │   └── screenshots/                # Screenshot untuk README
 ├── src/main/
 │   ├── java/kelas/
-│   │   ├── MainApp.java            # Entry point aplikasi
-│   │   ├── Navigator.java          # Pengatur perpindahan halaman
+│   │   │   ├── MainApp.java            # Entry point aplikasi
+│   │   │   └──Navigator.java          # Pengatur perpindahan halaman
 │   │   ├── controller/
 │   │   │   ├── FormController.java
 │   │   │   ├── DaftarController.java
 │   │   │   └── DetailController.java
 │   │   ├── data/
-│   │   │   └── DataPembelian.java  # Penyimpanan data di memori
+│   │   │   └── DataProduk.java  # Penyimpanan data di memori
 │   │   └── model/
 │   │       ├── Manage.java
 │   │       └── Produk.java
@@ -114,7 +114,7 @@ Pastikan perangkat sudah terpasang:
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/USERNAME/TokoAppAdvance.git
+git clone https://github.com/dikhiwardani/TokoAppsAdvanced.git
 
 # 2. Masuk ke folder project
 cd TokoAppAdvance
@@ -130,11 +130,6 @@ Saat pertama kali dijalankan, Maven akan mengunduh dependency sehingga prosesnya
 1. Buka **File → Open Project**, lalu pilih folder `TokoAppAdvance`.
 2. Klik kanan project, pilih **Run** (atau tekan `F6`).
 
-### Opsi 3: Lewat IntelliJ IDEA / VS Code
-
-1. Buka folder project sebagai **Maven project**.
-2. Jalankan perintah `javafx:run` dari panel Maven, atau jalankan class `kelas.MainApp`.
-
 ## 📖 Panduan Penggunaan
 
 1. **Tambah produk**: isi *Nama produk*, pilih *Jenis produk*, isi *Harga Produk* (angka saja, contoh `300000`), lalu klik **Pilih Gambar** untuk menambahkan foto (opsional). Klik **Simpan dan Lihat Detail**.
@@ -149,8 +144,3 @@ Saat pertama kali dijalankan, Maven akan mengunduh dependency sehingga prosesnya
 
 - Data produk disimpan **di memori (in-memory)**, sehingga seluruh data akan hilang ketika aplikasi ditutup.
 - Foto produk hanya dibaca dari **file lokal** dan tidak diunggah ke server.
-- Project ini sudah menyertakan dependency `mysql-connector-java`, tetapi belum digunakan pada versi saat ini.
-
-## 👤 Pengembang
-
-Dibuat oleh **[NAMA KAMU](https://github.com/USERNAME)**.
